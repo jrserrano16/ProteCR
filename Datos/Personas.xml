@@ -1,0 +1,4 @@
+<Personas>
+	<Persona IdPersona="1" Nombre="Manoli" Apellidos="Serrano López" Telefono="646438734" DNI="51136658F" 
+	    Sexo="Femenino" FechaNacimiento="02/07/1989" Domicilio="Calle Padre Mariana, 49"/>
+</Personas>

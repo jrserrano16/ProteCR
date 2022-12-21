@@ -1,0 +1,22 @@
+<Padrinos>
+  <Padrino IdPersona="1" Nombre="José Ramón" Apellidos="Serrano López" Telefono="644863444" DNI="71369722D" Sexo="Masculino" FechaNacimiento="01/01/2001" Domicilio="Calle Padre Mariana, 49" AportacionMensual="50" FormaPago="Efectivo" NumeroCuenta="Sin datos">
+    <Perros>
+      <Perro IdPerro="5" Nombre="Max" Sexo="Masculino" Raza="Mestizo" Peso="11" Edad="3" FechaEntrada="10/05/2018" Chip="True" PPP="False" Vacunado="True" Esterilizado="False" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="No registrado" Estado="Adoptado" Foto="/src/Perros/max.jpeg" Galeria="" />
+      <Perro IdPerro="11" Nombre="Oke" Sexo="Masculino" Raza="Mestizo" Peso="6" Edad="13" FechaEntrada="09/08/2021 0:00:00" Chip="False" PPP="False" Vacunado="True" Esterilizado="False" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="Un poco agresivo con personas desconocidas y otros perros, bastante activo con las hembras" Estado="Disponible" Foto="/src/Perros/P9160022.JPG" Galeria="" />
+      <Perro IdPerro="4" Nombre="Rex" Sexo="Masculino" Raza="Pastor Aleman" Peso="40" Edad="5" FechaEntrada="08/11/2021 0:00:00" Chip="True" PPP="True" Vacunado="True" Esterilizado="False" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="Muy sociable, aunque agresivo con otros perros" Estado="Adoptado" Foto="/src/Perros/4.jpeg" Galeria="" />
+    </Perros>
+  </Padrino>
+  <Padrino IdPersona="2" Nombre="Dani" Apellidos="Romero" Telefono="656185640" DNI="20618944L" Sexo="Masculino" FechaNacimiento="25/01/2001" Domicilio="c/ Risco (Del), 48, 1º, Agudo, Ciudad Real, 13410" AportacionMensual="250" FormaPago="Transferencia" NumeroCuenta="ES05 02870400">
+    <Perros>
+      <Perro IdPerro="7" Nombre="Thor" Sexo="Masculino" Raza="Husky" Peso="55" Edad="5" FechaEntrada="04/01/2022 0:00:00" Chip="True" PPP="True" Vacunado="True" Esterilizado="False" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="No registrado" Estado="Adoptado" Foto="/src/Perros/husky2.jpg" Galeria="" />
+      <Perro IdPerro="8" Nombre="Luna" Sexo="Femenino" Raza="Husky" Peso="6" Edad="3" FechaEntrada="09/08/2021 0:00:00" Chip="False" PPP="True" Vacunado="False" Esterilizado="True" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="No registrado" Estado="Disponible" Foto="/src/Perros/6.jpeg" Galeria="" />
+    </Perros>
+  </Padrino>
+  <Padrino IdPersona="3" Nombre="Miguel Ángel" Apellidos="Sánchez-Medina Camacho" Telefono="534543534" DNI="34534543G" Sexo="Masculino" FechaNacimiento="04/08/2021" Domicilio="Malagón" AportacionMensual="60" FormaPago="Efectivo" NumeroCuenta="ES13452 5451 5345345  5">
+    <Perros>
+      <Perro IdPerro="13" Nombre="Linda" Sexo="Femenino" Raza="Mestizo" Peso="5" Edad="6" FechaEntrada="05/02/2021" Chip="True" PPP="False" Vacunado="True" Esterilizado="False" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="Asustadiza pero amable, nació sin cola" Estado="Disponible" Foto="/src/Perros/linda.jpg" Galeria="" />
+      <Perro IdPerro="12" Nombre="Lola" Sexo="Masculino" Raza="Pug" Peso="7" Edad="2" FechaEntrada="05/01/2022 0:00:00" Chip="True" PPP="True" Vacunado="True" Esterilizado="True" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="No registrado" Estado="Adoptado" Foto="/src/Perros/pug.jpg" Galeria="" />
+      <Perro IdPerro="9" Nombre="Homer" Sexo="Masculino" Raza="Chihuahua" Peso="3" Edad="1" FechaEntrada="06/10/2021 0:00:00" Chip="True" PPP="False" Vacunado="True" Esterilizado="True" Apadrinado="True" Enfermedades="No registrado" Tratamientos="No registrado" OtrosDatos="No registrado" Estado="Adoptado" Foto="/src/Perros/chihuahua-pelo-largo.jpg" Galeria="" />
+    </Perros>
+  </Padrino>
+</Padrinos>

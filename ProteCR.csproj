@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CA4C229-1EF0-4C74-8B5D-0D454A035883}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProteCR</RootNamespace>
+    <AssemblyName>ProteCR</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Dominio\Padrino.cs" />
+    <Compile Include="Dominio\Perro.cs" />
+    <Compile Include="Dominio\Persona.cs" />
+    <Compile Include="Dominio\Socio.cs" />
+    <Compile Include="Dominio\Voluntario.cs" />
+    <Compile Include="IU_ApadrinarPerros.xaml.cs">
+      <DependentUpon>IU_ApadrinarPerros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IU_Padrinos.xaml.cs">
+      <DependentUpon>IU_Padrinos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IU_Perros.xaml.cs">
+      <DependentUpon>IU_Perros.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IU_Socios.xaml.cs">
+      <DependentUpon>IU_Socios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IU_Voluntarios.xaml.cs">
+      <DependentUpon>IU_Voluntarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Otras Clases\AuxClass.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="IU_ApadrinarPerros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IU_Padrinos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IU_Perros.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IU_Socios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IU_Voluntarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\correct.png" />
+    <Resource Include="src\LogoContorno.png" />
+    <Resource Include="src\perro2.jpg" />
+    <Resource Include="src\wrong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\owner.png" />
+    <Resource Include="src\partners.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\fem.png" />
+    <Resource Include="src\masc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\google-maps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\camara.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\dog1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\camara1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\delete.png" />
+    <Resource Include="src\plus.png" />
+    <Resource Include="src\write.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\escoba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentacion\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Personas.xml" />
+    <Resource Include="Datos\Socios.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Perros.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Voluntarios.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\adoptar.png" />
+    <Resource Include="src\disponible.png" />
+    <Resource Include="src\reservado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\Padrinos.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\3.jpeg" />
+    <Resource Include="src\Perros\4.jpeg" />
+    <Resource Include="src\Perros\6.jpeg" />
+    <Resource Include="src\Perros\no_dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\pome.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\husky2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\chihuahua-pelo-largo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\dober.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\pug.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\P9160022.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\max.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="src\Perros\linda.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

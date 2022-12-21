@@ -1,0 +1,153 @@
+﻿<Window x:Class="ProteCR.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProteCR"
+        mc:Ignorable="d"
+        Title="Window2" Height="768" Width="1366" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="114*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="293*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="89*"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="71*"/>
+            <ColumnDefinition Width="318*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="161*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="Fondo"  HorizontalAlignment="Left" 
+                   Height="752" VerticalAlignment="Top"  Width="1366" Grid.ColumnSpan="10" Grid.RowSpan="10">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/src/Perro2.jpg" 
+                            Stretch="UniformToFill" Opacity="0.7"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="FondoLogin" 
+                   Fill="#d9d8d8" Margin="10,80,10,0" 
+                   Stroke="White" StrokeThickness="5"
+                   RadiusX="20" RadiusY="20" RenderTransformOrigin="0.499,0.447" Grid.Column="1" Grid.RowSpan="9" Grid.ColumnSpan="8"/>
+        <Image x:Name="Logo" Source="src/LogoContorno.png"  RenderTransformOrigin="0.521,0.796" Grid.Column="2" Grid.Row="2" Grid.RowSpan="2" Margin="10,7,10,3" />
+        <Label x:Name="Clientes" Content="GESTIÓN DE CLIENTES" Margin="10,24,63,20" FontSize="72" FontFamily="Bauhaus 93" Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="5"/>
+        <Button x:Name="btn_GestionSocios"
+                HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Width="298" 
+                        FontSize="16"  Height="262" Foreground="White" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Click="btn_GestionSocios_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF404748" Offset="1"/>
+                    <GradientStop Color="#FF20D3E9" Offset="0.58"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image Source="src/partners.png" Height="224" Width="205" RenderTransformOrigin="0.686,-0.239"/>
+                <TextBlock Text="Socios"
+                                   FontSize="30"
+                                   
+                                   VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" Foreground="White" FontFamily="Bauhaus 93"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_GestionPadrinos"
+                HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Width="298" 
+                        FontSize="16"  Height="262" Foreground="White" RenderTransformOrigin="0.214,0.55" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="3" Margin="10,0,0,0" Click="Btn_GestionPadrinos_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF404748" Offset="1"/>
+                    <GradientStop Color="#FF20D3E9" Offset="0.58"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image Source="src/owner.png" Height="224" Width="205" RenderTransformOrigin="0.686,-0.239"/>
+                <TextBlock Text="Padrinos"
+                                   FontSize="30"
+                                   
+                                   VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" Foreground="White" FontFamily="Bauhaus 93"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_GestionVoluntarios"
+                HorizontalAlignment="Center" 
+                        VerticalAlignment="Center" 
+                        Width="298" 
+                        FontSize="16" 
+                Height="262" Foreground="White" Grid.Column="7" Grid.Row="5" Click="Btn_GestionVoluntarios_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF404748" Offset="1"/>
+                    <GradientStop Color="#FF20D3E9" Offset="0.58"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Vertical">
+                <Image Source="src/ayuda.png" Height="224" Width="205" RenderTransformOrigin="0.686,-0.239"/>
+                <TextBlock Text="Voluntarios"
+                                   FontSize="30"
+                                   
+                                   VerticalAlignment="Center"
+                                    HorizontalAlignment="Center" Foreground="White" FontFamily="Bauhaus 93"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Salir" 
+            HorizontalAlignment="Left" 
+            Grid.Row="7" 
+            VerticalAlignment="Center" 
+            Width="149" 
+            FontSize="16"  Grid.Column="5" Height="43" BorderBrush="Black" BorderThickness="4" Foreground="White" Click="Btn_Salir_Click" Margin="103,0,0,0" Grid.ColumnSpan="2" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C6C6C"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/log-out.png" OpacityMask="White"
+                               />
+                <TextBlock Text="Salir"
+                    FontSize="27"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right" FontFamily="Arial"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Atras" 
+            HorizontalAlignment="Left" 
+            Grid.Row="7" 
+            VerticalAlignment="Center" 
+            Width="149" 
+            FontSize="16"  Grid.Column="4" Height="43" BorderBrush="Black" BorderThickness="4" Foreground="White" Margin="10,0,0,0" Grid.ColumnSpan="2" Click="btn_Atras_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C6C6C"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/return.png" OpacityMask="White"
+                               />
+                <TextBlock Text="Atras"
+                    FontSize="27"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right" FontFamily="Arial"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,146 @@
+﻿<Window x:Class="ProteCR.IU_ApadrinarPerros"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProteCR"
+        mc:Ignorable="d"
+        Title="IU_ApadrinarPerros" Height="768" Width="1366" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid x:Name="Principal">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="111*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="221*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="85*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="340*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="169*"/>
+            <ColumnDefinition Width="139*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="232*"/>
+            <ColumnDefinition Width="34*"/>
+            <ColumnDefinition Width="340*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="Fondo"  HorizontalAlignment="Left" 
+                   Height="752" VerticalAlignment="Top"  Width="1366" Grid.ColumnSpan="8" Grid.RowSpan="12">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/src/Perro2.jpg" 
+                            Stretch="UniformToFill" Opacity="0.7"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="FondoLogin" Grid.Column="1" Grid.Row="1" 
+                   Fill="#d9d8d8" Margin="6,3,2,3" 
+                   Stroke="White" StrokeThickness="5"
+                   RadiusX="20" RadiusY="20" Grid.RowSpan="10" Grid.ColumnSpan="6"/>
+        <Image x:Name="Logo" Source="/src/LogoContorno.png"  Grid.Row="1"  Grid.Column="2"  Grid.RowSpan="3" Margin="0,23,1,1"/>
+        <Label x:Name="txtUser" Grid.Column="2"  Grid.Row="7" Grid.ColumnSpan="5"  Grid.RowSpan="2" Margin="0,170,2,7" />
+        <Label x:Name="Bienvenidos" Content="Apadrinar" Grid.Column="3" Margin="4,5,16,5" Grid.Row="2" FontSize="72" FontFamily="Bauhaus 93" Grid.ColumnSpan="3" RenderTransformOrigin="0.505,0.273"/>
+        <Button x:Name="btn_Salir" 
+                        HorizontalAlignment="Left" 
+                        Grid.Row="9" 
+                        VerticalAlignment="Center" 
+                        Width="149" 
+                        FontSize="16"  Grid.Column="4" Height="43" BorderBrush="Black" BorderThickness="4" Foreground="White" Click="Btn_Salir_Click" Margin="10,0,0,0" Grid.ColumnSpan="2" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C6C6C"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="src/log-out.png" OpacityMask="White"
+                               />
+                <TextBlock Text="Salir"
+                                   FontSize="27"
+                                   VerticalAlignment="Center"
+                           HorizontalAlignment="Right" FontFamily="Arial"/>
+            </StackPanel>
+        </Button>
+        <ListBox x:Name="lstbx_Perros" BorderThickness="3" Grid.Row="6" BorderBrush="#FFFD654D" Background="#FFFCDEC3"  Grid.Column="2" Grid.ColumnSpan="2" Grid.RowSpan="2" ItemsSource="{Binding}" SelectionChanged="lstbx_Perros_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Foto}" Width="55" Height="55" Margin="10,0,0,0"/>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Text="{Binding Nombre}" FontFamily="Arial" FontSize="13" />
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Text="{Binding Raza}" FontFamily="Arial" FontSize="13" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border BorderBrush="#FFF56D3C" BorderThickness="3" Grid.Row="5"  Grid.Column="2" Grid.ColumnSpan="2"     >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF78A63"/>
+                    <GradientStop Color="#FFD7812D" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock x:Name="lbl_listaPerros" Text="Listado Perros" Foreground="White"  FontFamily="Arial Black" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+        </Border>
+        <Button x:Name="btn_Atras" 
+            HorizontalAlignment="Left" 
+            Grid.Row="9" 
+            VerticalAlignment="Center" 
+            Width="149" 
+            FontSize="16"  Grid.Column="2" Height="43" BorderBrush="Black" BorderThickness="4" Foreground="White" Click="btn_Atras_Click_1" Margin="148,0,0,0" Grid.ColumnSpan="2" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C6C6C"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/return.png" OpacityMask="White"
+                               />
+                <TextBlock Text="Atras"
+                    FontSize="27"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right" FontFamily="Arial"/>
+            </StackPanel>
+        </Button>
+        <TextBox x:Name="txt_NombrePerro" Grid.Column="4" Grid.Row="7" BorderThickness="3" TextWrapping="Wrap" 
+                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="70,0,0,158" FontSize="18" FontWeight="Normal" FontFamily="Arial Black" FontStyle="Italic" IsReadOnly="True" BorderBrush="#FF2994F2" Background="#FFCCE5F9" Grid.ColumnSpan="2" Text="{Binding ElementName=lstbx_Perros,Path=SelectedItem.Nombre}"
+                 />
+        <Border BorderBrush="#FF2994F2" BorderThickness="3" Grid.Row="6"  Grid.Column="4" Grid.ColumnSpan="2" Margin="70,2,0,1"    >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF3CEEF5"/>
+                    <GradientStop Color="#FF2994F2" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock x:Name="txb_Selected" Text="Perro Seleccionado:" Foreground="White"  FontFamily="Arial Black" FontSize="19" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Border>
+        <Button x:Name="btn_Apadrinar"  HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Width="165" 
+            FontSize="16"  Grid.Column="5" Height="65" BorderThickness="4" Foreground="White" Click="btn_Apadrinar_Click" Margin="0,105,0,0" RenderTransformOrigin="0.174,-4.536" Grid.Row="7" BorderBrush="#FF3C4A84" IsEnabled="False" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF93A5F1"/>
+                    <GradientStop Color="#FF3C4A84" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/dog1.png" Height="42" Width="36" 
+                               />
+                <TextBlock Text="Apadrinar"
+                    FontSize="22"
+                    VerticalAlignment="Center" HorizontalAlignment="Right" FontFamily="Arial Black" Foreground="White"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

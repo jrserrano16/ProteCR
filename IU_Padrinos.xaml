@@ -1,0 +1,295 @@
+﻿<Window x:Class="ProteCR.IU_Padrinos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProteCR"
+        mc:Ignorable="d"
+        Title="IU_Padrinos" Height="768" Width="1366" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#FF3DB9DC"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="BorderBrush" Value="#FF3DB9DC"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="BorderBrush" Value="#FF3DB9DC"/>
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="153*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="157*"/>
+            <RowDefinition Height="129*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="84*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="172*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="181*"/>
+            <ColumnDefinition Width="576*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="19*"/>
+            <ColumnDefinition Width="172*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="Fondo"  HorizontalAlignment="Left" 
+                   Height="752" VerticalAlignment="Top"  Width="1366" Grid.ColumnSpan="10" Grid.RowSpan="11">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/src/Perro2.jpg" 
+                            Stretch="UniformToFill" Opacity="0.7"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="FondoLogin" Grid.Column="1" 
+            Fill="#d9d8d8" 
+            Stroke="White" StrokeThickness="5"
+            RadiusX="50" RadiusY="50" Grid.RowSpan="11" Grid.ColumnSpan="5" Margin="1,81,1,77"/>
+        <Image x:Name="Logo" Source="/src/LogoContorno.png"  RenderTransformOrigin="0.521,0.796" Grid.Column="2" Grid.Row="2" Grid.RowSpan="4"  Height="196" VerticalAlignment="Top" Margin="4,7,0,0" />
+        <Label x:Name="Padrinos" Content="GESTIÓN DE PADRINOS" Margin="180,37,21,7" FontSize="72" FontFamily="Bauhaus 93" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="5"/>
+        <ListBox x:Name="lstbx_Padrinos" Grid.Column="2" BorderThickness="3" Grid.Row="5" Grid.RowSpan="3" BorderBrush="#FFFD654D" Background="#FFFCDEC3" Margin="0,36,0,5" ItemsSource="{Binding}" SelectionChanged="lstbx_Padrinos_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center"
+Margin="10,0,0,0"
+Text="{Binding IdPersona}"/>
+                        <TextBlock VerticalAlignment="Center"
+Margin="20,0,0,0"
+Text="{Binding Nombre}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <GroupBox Grid.Column="3" BorderThickness="2"  Grid.Row="6" Margin="5,152,53,5" BorderBrush="#FF3DB9DC" Grid.RowSpan="2">
+            <GroupBox.Header>
+                <Border Background="#FF06060C" CornerRadius="5,5,5,5">
+                    <TextBlock Text="Otros Datos"  Foreground="White" Background="#FF3DB9DC" FontFamily="Arial Black" FontSize="14" Margin="-2,0,-4,0"/>
+                </Border>
+            </GroupBox.Header>
+            <Grid Background="#FFD0EEF7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="123*"/>
+                    <ColumnDefinition Width="118*"/>
+                    <ColumnDefinition Width="116*"/>
+                    <ColumnDefinition Width="149*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lbl_Aportacion" Content="Aportación/mes:" FontFamily="Arial Black" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="24" FontStyle="Italic" HorizontalAlignment="Center" Width="117" ToolTip="Aportacion Mensual en € (de 0 a 1000)"/>
+                <Label x:Name="lbl_FPago" Content="Forma Pago:" FontFamily="Arial Black" Margin="15,0,10,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="24" FontStyle="Italic" Grid.Column="2"/>
+                <TextBox x:Name="txtbox_Aportacion" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="29" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="Black" FontStyle="Normal" FontFamily="Arial" Grid.ColumnSpan="2" Margin="8,0,0,0" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.AportacionMensual}" />
+                <TextBox x:Name="txtbox__FPago" Grid.Column="3" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="124" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.FormaPago}"/>
+                <Label x:Name="lbl_NCuenta" Content="Nº Cuenta:" FontFamily="Arial Black" Margin="3,11,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Top" Grid.Row="1" Height="24" FontStyle="Italic" HorizontalAlignment="Left" Width="84" />
+                <TextBox x:Name="txt_NCuenta" Margin="8,8,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" Foreground="Black" FontStyle="Normal" FontFamily="Arial" RenderTransformOrigin="0.468,-2.193" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.NumeroCuenta}"/>
+            </Grid>
+        </GroupBox>
+        <Border BorderBrush="#FFF56D3C" BorderThickness="3" Grid.Column="2" Grid.Row="4" Margin="0,1,0,0" Grid.RowSpan="2" >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF56D3C"/>
+                    <GradientStop Color="#FFF28C29" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock Text="Listado Padrinos" Foreground="White"  FontFamily="Arial Black" FontSize="16" VerticalAlignment="center" HorizontalAlignment="Center"/>
+        </Border>
+        <GroupBox Grid.Column="3" BorderThickness="2"  Grid.Row="4" Margin="5,1,2,9" Grid.RowSpan="3" BorderBrush="#FF3DB9DC">
+            <GroupBox.Header>
+                <Border Background="#FF06060C" CornerRadius="15">
+                    <TextBlock Text="Datos Personales" Foreground="White" Background="#FF3DB9DC" FontFamily="Arial Black" FontSize="14" Margin="-5,0,-5,0"/>
+                </Border>
+            </GroupBox.Header>
+            <Grid Background="#FFD0EEF7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="22*"/>
+                    <ColumnDefinition Width="47*"/>
+                    <ColumnDefinition Width="23*"/>
+                    <ColumnDefinition Width="46*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="30*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="lbl_Nombre" Content="Nombre:" FontFamily="Arial Black" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="24" FontStyle="Italic" HorizontalAlignment="Left" Width="66"/>
+                <Label x:Name="lbl_Tel" Content="Teléfono:" FontFamily="Arial Black" Margin="3,0,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Height="24" FontStyle="Italic" HorizontalAlignment="Left" Width="70"/>
+                <Label x:Name="lbl_Sexo" Content="Sexo:" FontFamily="Arial Black" Margin="3,0,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Grid.Row="2" Height="24" FontStyle="Italic" HorizontalAlignment="Left" Width="47"/>
+                <Label x:Name="lbl_domicilio" Content="Domicilio:" FontFamily="Arial Black" Margin="3,0,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Grid.Row="3" Height="24" FontStyle="Italic" HorizontalAlignment="Left" Width="76"/>
+                <Label x:Name="lbl_Apellidos" Content="Apellidos:" FontFamily="Arial Black" Margin="4,0,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="24" FontStyle="Italic" Grid.Column="2" HorizontalAlignment="Left" Width="74"/>
+                <Label x:Name="lbl_DNI" Content="DNI:" FontFamily="Arial Black" Margin="4,0,0,0" HorizontalContentAlignment="Right" VerticalAlignment="Center" Grid.Row="1" Height="24" FontStyle="Italic" Grid.Column="2" HorizontalAlignment="Left" Width="37"/>
+                <Label x:Name="LBL_F_Nac" Content="Fecha Nac.:" FontFamily="Arial Black" Margin="0,10,0,0" HorizontalContentAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Height="25" FontStyle="Italic" Grid.Column="2" HorizontalAlignment="Center" Width="92"/>
+                <TextBox x:Name="txt_Nombre" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="149" Height="29" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="Black" FontStyle="Normal" FontFamily="Arial" Margin="17,0,0,0" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.Nombre}"  />
+                <TextBox x:Name="txt_Tel" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Width="149" Height="29" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Margin="17,0,0,0" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.Telefono}"/>
+                <TextBox x:Name="txt_domicilio" Margin="17,0,25,0" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="3" Grid.ColumnSpan="3" Grid.Column="1" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.Domicilio}"/>
+                <TextBox x:Name="txtbox__Apellidos" Grid.Column="3" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="149" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.Apellidos}"/>
+                <TextBox x:Name="txtbox_DNI" Grid.Column="3" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="148" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="1" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.DNI}"/>
+                <DatePicker x:Name="dp_Fecha" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Foreground="Black" FontStyle="Normal" FontFamily="Arial" Height="24" Width="148" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.FechaNacimiento}"/>
+                <ComboBox x:Name="cbGenero" Grid.Row="2" Grid.Column="1" HorizontalContentAlignment="Center" Margin="17,0,24,0" Foreground="Black" FontStyle="Normal" FontFamily="Arial" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="29" Text="{Binding ElementName=lstbx_Padrinos,Path=SelectedItem.Sexo}">
+                    <ComboBoxItem>
+                        <TextBlock Text= "Masculino" VerticalAlignment="center" Margin="5,0,0,0" Foreground="Black" FontStyle="Normal" FontFamily="Arial"/>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock Text= "Femenino" VerticalAlignment="center" Margin="5,0,0,0" Foreground="Black" FontStyle="Normal" FontFamily="Arial"/>
+                    </ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="btn_Atras" 
+            HorizontalAlignment="Left" 
+            Grid.Row="7" 
+            VerticalAlignment="Top" 
+            Width="102" 
+            FontSize="16"  Grid.Column="3" Height="39" BorderBrush="Black" BorderThickness="4" Foreground="White" Margin="528,85,0,0" Click="Btn_Atras_Click" Grid.ColumnSpan="2" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6C6C6C"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel x:Name="btn_Atras1" Orientation="Horizontal">
+                <Image Source="/src/return.png" OpacityMask="White"
+                               />
+                <TextBlock Text="Atrás"
+                    FontSize="20"
+                    VerticalAlignment="Center" FontFamily="Arial Black" Width="63"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Salir" 
+            Grid.Row="7" 
+            VerticalAlignment="Top" 
+            FontSize="16"  Grid.Column="4" Height="39" BorderBrush="Black" BorderThickness="4" Foreground="White" Margin="90,85,10,0" Click="Btn_Salir_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF6C6C6C" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="src/log-out.png"
+                               >
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="#FF575B62" Opacity="1"/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="Salir"
+                    FontSize="20"
+                    VerticalAlignment="Center" FontFamily="Arial Black" Foreground="White" Width="56"/>
+            </StackPanel>
+        </Button>
+        <ListBox  x:Name="lstbx_Apadrinamientos" Grid.Column="4" BorderThickness="3" Grid.Row="5" Grid.RowSpan="2" BorderBrush="#FF23C54A" Background="#FF8DF9B7" Margin="12,36,10,0" Height="149" VerticalAlignment="Top" Foreground="Black" ItemsSource="{Binding}">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Foto}" Width="55" Height="55" Margin="10,0,0,0"/>
+                        <TextBlock VerticalAlignment="Center" Margin="10,0,0,0" Text="{Binding Nombre}" FontFamily="Arial" FontSize="13" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border x:Name="bor_Apadrinamientos" BorderBrush="#FF23C54A" BorderThickness="3" Grid.Column="4" Grid.Row="4" Margin="12,1,10,0" Grid.RowSpan="2" >
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8BF1A3"/>
+                    <GradientStop Color="#FF23C54A" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock x:Name="lbl_perrosapadrinados" Text="Perros Apadrinados" Foreground="White"  FontFamily="Arial Black" FontSize="16" VerticalAlignment="center" HorizontalAlignment="Center"/>
+        </Border>
+        <Button x:Name="btn_Apadrinar" 
+            HorizontalAlignment="Center" 
+            Grid.Row="7" 
+            VerticalAlignment="Top" 
+            Width="162" 
+            FontSize="16"  Grid.Column="4" Height="49" BorderBrush="#FF23C54A" BorderThickness="4" Foreground="White" Margin="0,10,0,0" Click="btn_Apadrinar_Click" IsEnabled="False" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF8BF1A3"/>
+                    <GradientStop Color="#FF23C54A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/dog1.png" 
+                               />
+                <TextBlock Text="Apadrinar"
+                    FontSize="20"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right" FontFamily="Arial Black" Foreground="White"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Añadir" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="3" BorderBrush="LightSteelBlue" BorderThickness="3" Foreground="White" Margin="6,1,461,1" Click="btn_Añadir_Click" Background="PowderBlue" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/plus.png" Height="20" Width="20">
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="#FF575B62" Opacity="1"/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="Añadir"
+                    FontSize="18"
+                    VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Width="64"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Eliminar" 
+            Grid.Row="3" 
+            FontSize="16" IsEnabled="False"  Grid.Column="3" BorderBrush="LightSteelBlue" BorderThickness="3" Foreground="White" Margin="120,1,347,1" Background="PowderBlue"  Click="btn_Eliminar_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/delete.png" Height="20" Width="20"
+                               >
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="#FF575B62" Opacity="1"/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="Eliminar
+                           "
+                    FontSize="16"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right" FontFamily="Arial Black" Foreground="Black"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Editar" 
+            Grid.Row="3" 
+            FontSize="16" IsEnabled="False" Grid.Column="3" BorderBrush="RoyalBlue" BorderThickness="3" Foreground="White" Margin="234,1,234,1" Background="LightSkyBlue"  Click="btn_Editar_Click" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/write.png" Height="20" Width="20"
+                               >
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="#FF575B62" Opacity="1"/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="Editar                            "
+                    FontSize="18"
+                    VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Width="60"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_Limpiar" 
+            Grid.Row="3" 
+            FontSize="16"  Grid.Column="3" BorderBrush="#FF6A22A3" BorderThickness="3" Foreground="White" Margin="347,1,121,1" Click="btn_Limpiar_Click" Background="#FFC17CF7" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/src/escoba.png" Height="20" Width="20"
+                               >
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="#FF575B62" Opacity="1"/>
+                    </Image.OpacityMask>
+                </Image>
+                <TextBlock Text="Limpiar                            "
+                    FontSize="18"
+                    VerticalAlignment="Center" FontFamily="Arial Black" Foreground="Black" Width="75"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>

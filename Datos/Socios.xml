@@ -1,0 +1,3 @@
+<Socios>
+  <Socio IdPersona="1" Nombre="Lucas" Apellidos="Carrasco Gutiérrez" Telefono="666333221" DNI="70254625K" Sexo="Masculino" FechaNacimiento="06/05/2001" Domicilio="Calle Ortega y Gasset, 5, Agudo, Ciudad Real, 13410" CuantiaAyuda="125" FormaPago="Bizum" NumeroCuenta="ES05 2045 7534 12 5 206897" />
+</Socios>
